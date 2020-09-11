@@ -1,0 +1,110 @@
+<mvc:View controllerName="wipro.hr.payroll.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+
+		
+				<Page id= "page1" title="Catalog">
+					
+					<headerContent>
+					<Button icon = "sap-icon://action" press= "onNext">
+						
+					</Button>	
+					</headerContent>
+					
+					<customHeader>
+						
+						<Toolbar>
+							<SearchField id = "zkas" liveChange= "onSearch"/>
+					
+						</Toolbar>
+					</customHeader>
+					<content>
+						
+						<List mode ="SingleSelectMaster" items = "{/ProductSet}" id = "List1" 
+						delete = "onDelete" growing="true" growingThreshold="5" 
+						   selectionChange = "onPress">
+							<items>
+							<ObjectListItem 
+						
+							title = "{NAME}" intro = "{DESCRIPTION}"
+							icon = "{gender}"
+							number = "{PRICE}" numberUnit = "{CURRENCY_CODE}" > 
+							
+							<attributes>
+								<ObjectAttribute text="{CATEGORY}">
+									
+								</ObjectAttribute>
+							</attributes>
+							
+							<firstStatus>
+								<ObjectStatus text = "{SUPPLIER_ID}"></ObjectStatus>
+							</firstStatus>
+									
+								</ObjectListItem>
+							</items>
+							
+						</List>
+					<!--<Button text= "Next" press= "onNext">
+						
+					</Button>-->
+					
+				<!--	<List>
+						<items>
+							<DisplayListItem label = "Apple" value = "Best Antibiotic" >
+							</DisplayListItem>
+							
+							<StandardListItem icon = "https://sifu.unileversolutions.com/image/en-LK/recipe-topvisual/2/1260-709/authentic-chicken-biryani-50434132.jpg" 
+							title = "Hyderabadi biriyani" 
+							description = "Partially cooked rice is layered over the marinated raw meat" >
+							</StandardListItem>
+							
+							<InputListItem>
+								<HBox>
+									<Label text = "Quantity"></Label>
+									<Input> </Input>
+								</HBox>
+							</InputListItem>
+							
+							<CustomListItem>
+								<Text text = "Do you want COD ">
+									
+								</Text>
+								<Switch>
+									
+								</Switch>
+							</CustomListItem> 
+							
+							<ObjectListItem
+							title = "Lucknowi Biriyani"
+							intro = "Lucknowi biryani is smooth and its meat is marinated in yoghurt and herbs"
+							icon = "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Shaheen_Ali/LUCKNOWI_MURG_BIRYANI__AWADHI_CHICKEN_BIRYANI.jpg"
+							number = "1500 INR"
+							numberUnit = "per KG"
+							>
+							</ObjectListItem>
+							
+							<FeedListItem
+							text = "Can I help you ?"
+							icon = "https://img.etimg.com/thumb/msid-76138042,width-1200,height-900/news/politics-and-nation/70-per-cent-of-people-want-modi-to-be-pm-for-another-term-yediyurappa.jpg"
+							sender = "Narendra Modi"
+							>
+							</FeedListItem>
+							
+							<ActionListItem
+							text = "Order Now!"
+							>
+								
+							</ActionListItem>
+						</items>
+						
+					</List>-->
+					
+					</content>
+					<footer>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Button icon = "sap-icon://add" tooltip = "Add New Product"
+							press = "onAdd"></Button>
+						</Toolbar>
+					</footer>
+				</Page>
+
+</mvc:View>

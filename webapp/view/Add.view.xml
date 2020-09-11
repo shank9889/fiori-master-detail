@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="wipro.hr.payroll.controller.Add">
+	<App>
+		<pages>
+			<Page title="Add New Poduct">
+				<content>
+				    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form0">
+				        <sap.ui.layout.form:content>
+				            <core:Title text="Title" id="__title0"/>
+				            <Label text="Product id" id="__label0"/>
+				            <Input width="50%" id="__input0" value="{shashank>/productData/PRODUCT_ID}" submit="onSubmit"/>
+				            <Label text="Product Name" id="__label1"/>
+				            <Input width="60%" id="__input2" value="{shashank>/productData/NAME}"/>
+				            <Label text="Description"/>
+				            <Input width="100%" value="{shashank>/productData/DESCRIPTION}"/>
+				            <Label text="Supplier Id"/>
+				            <Input width="40%" showValueHelp="true" valueHelpRequest="onF4H"/>
+				            <Label text="Price"/>
+				            <Input width="40%" value="{shashank>/productData/PRICE}"/>
+				            <Input width="30%" value="{shashank>/productData/CURRENCY_CODE}"/>
+				            </sap.ui.layout.form:content>
+				    </sap.ui.layout.form:SimpleForm>
+				</content>
+			<footer>
+			    <Toolbar width="100%" id="__toolbar1">
+			        <content>
+			            <ToolbarSeparator id="__separator0"/>
+			            <ToolbarSpacer xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="__spacer0"/>
+			            <Button width="100px" id="__button1" text="Most Expensive" activeIcon="sap-icon://monitor-payments" tooltip="Ge Most Expensive" press="onExpensive"/>
+			            <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" text="Save" width="100px" id="__button0" activeIcon="sap-icon://save\" press="newSave"/>
+			        </content>
+			    </Toolbar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

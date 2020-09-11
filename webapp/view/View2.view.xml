@@ -1,0 +1,78 @@
+<mvc:View controllerName="wipro.hr.payroll.controller.View2" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
+    xmlns:f = "sap.ui.layout.form" xmlns:core="sap.ui.core">
+
+				<Page id="Page2" title="Details" showNavButton = "true" navButtonPress = "onBack">
+					
+				  
+					
+					<content>
+				<!--	<Button text = "Back" press = "onBack">
+						
+					</Button>-->
+				  <ObjectHeader 
+				  title = "{NAME}" intro = "{DESCRIPTION}" 	
+				  number = "{PRICE}" numberUnit = "{CURENCY_CODE}" >
+				  	
+				  </ObjectHeader>
+				  
+			
+				  
+				  <IconTabBar>
+				  	<items>
+				  		<IconTabFilter key="MD" text = "More Details." icon="sap-icon://hint">
+				  			<content>
+				  					<f:SimpleForm id = "suppData">
+	                              
+				  					<Label text = "Supplier Id"></Label>
+				  					<Text text = "{BpId}"></Text>
+				  					<Label text = "supplier Name">  </Label>
+				  					<Text text = "{CompanyName}"></Text>
+				  					<Label text = "Address"></Label>
+				  					<Text text = "{Street} - {City} ,  {Country}"></Text>
+	                           
+                                   	</f:SimpleForm>
+                              <Image id = "imageDisplay" width="400px" height="400px"></Image>
+				  			</content>
+				  		</IconTabFilter>
+				  		<IconTabFilter key="SL" text = "Suppliers" icon="sap-icon://supplier">
+				  			<content>
+				  			<core:Fragment fragmentName = "wipro.hr.payroll.fragments.supplierTab" type = "XML"></core:Fragment>
+				  			</content>
+				  		</IconTabFilter>
+				  		<IconTabFilter key="CT" text = "Cities" icon="sap-icon://home">
+				  			<Select items = "{/cities}" id="idCity" change = "onDropDownChange">
+				  				<items>
+                                   <core:Item text = "{name}" key="{name}"> </core:Item>
+				  				</items>
+				  			</Select>
+				  			
+				  		<ComboBox items = "{/cities}" id="idCity1" change = "onDropDownChange">
+				  				<items>
+                                   <core:Item text = "{name}" key="{name}"> </core:Item>
+				  				</items>
+				  			</ComboBox>
+				  			
+				  			<MultiComboBox items = "{/cities}" id="idCity2" selectionChange = "onMulti">
+				  				<items>
+                                   <core:Item text = "{name}" key="{name}"> </core:Item>
+				  				</items>
+				  			</MultiComboBox>
+				  		</IconTabFilter>
+				  	</items>
+				  </IconTabBar>	
+			
+						
+				
+					
+					</content>
+					
+					<footer>
+						<Toolbar>
+							<ToolbarSpacer />
+							<Button text = "Approve" type = "Accept" press= "onApprove"></Button>
+							<Button text = "Reject" type = "Reject" press= "onReject"></Button>
+						</Toolbar>
+					</footer>
+				</Page>
+			
+</mvc:View>

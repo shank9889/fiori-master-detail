@@ -1,0 +1,136 @@
+{
+	"_version": "1.6.0",
+	"sap.app": {
+		"id": "wipro.hr.payroll",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": ["{{keyword1}}", "{{keyword2}}"]
+		},
+		"ach": "HR-PR",
+		"dataSources": {
+			"ZSH_FIORI_APP_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSH_FIORI_APP_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSH_FIORI_APP_SRV/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_bluecrystal", "sap_belize"]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.56.10",
+			"libs": {
+				"sap.ui.layout": {
+					"minVersion": "1.5.10"
+				},
+				"sap.m": {
+					"minVersion": "1.56.0"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/mystyle.css",
+				"id": ""
+			}]
+		},
+		"models": {
+			"local": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/mockData/catalog.json",
+				"preload": true
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {},
+				"uri": "i18n/i18n.properties",
+				"preload": true,
+				"async": true
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					
+				},
+				"dataSource": "ZSH_FIORI_APP_SRV",
+				"preload": true
+			}
+		},
+		"rootView": {
+			"viewName": "wipro.hr.payroll.view.App",
+			"type": "XML",
+			"id": "idAppView"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "wipro.hr.payroll.view",
+				"controlId": "myApp"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": ["donald", "trump"]
+			}, {
+				"pattern": "mario/{fruitId}",
+				"name": "detail",
+				"target": ["donald", "modi"]
+			},
+			{
+				"pattern": "addNew",
+				"name": "add",
+				"target": ["donald", "putin"]
+			}
+			],
+			"targets": {
+				"donald": {
+					"viewName": "View1",
+					"viewId": "idView1",
+					"controlAggregation": "masterPages"
+				},
+				"trump": {
+					"viewName": "Empty",
+					"viewId": "idEmpty",
+					"controlAggregation": "detailPages"
+				},
+				"modi": {
+					"viewName": "View2",
+					"viewId": "idView2",
+					"controlAggregation": "detailPages"
+				},
+				
+				"putin": {
+					"viewName": "Add",
+					"viewId": "idAdd",
+					"controlAggregation": "detailPages"
+				}
+			}
+		}
+	}
+}
