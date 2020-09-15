@@ -1,7 +1,9 @@
 <core:FragmentDefinition xmlns:core= "sap.ui.core" xmlns="sap.m"
     >
 	
-		<Table id = "suppTab" items="{/cities}" mode = "MultiSelect" itemPress = "onItemPress">
+		<Table id = "suppTab" items="{/ProductSet}" >
+		<!--mode = "MultiSelect" itemPress = "onItemPress"-->
+		
 			
 			<headerToolbar>
 				<Toolbar>
@@ -12,34 +14,36 @@
 				  					<columns>
 				  					<Column>
 				  						<header>
-				  							<Text text = "Name"></Text>
+				  							<Text text = "PRODUCT_ID"></Text>
 				  						</header>
 				  					</Column>
 				  					<Column>
 				  						<header>
-				  							<Text text = "Location"></Text>
+				  							<Text text = "NAME"></Text>
 				  						</header>
 				  					</Column>
 				  					<Column minScreenWidth = "Tablet" >
 				  						<header>
-				  							<Text text = "City"></Text>
+				  							<Text text = "CATEGORY"></Text>
 				  						</header>
 				  					</Column>
 				  					
 				  					<Column minScreenWidth = "Tablet" demandPopin = "true">
 				  						<header>
-				  							<Text text = "Contact "></Text>
+				  							<Text text = "PRICE "></Text>
 				  						</header>
 				  					</Column>
 				  					</columns>
 				  					
 				  					<items>
-				  						<ColumnListItem type = "Navigation">
+				  						<ColumnListItem >
+				  						<!--type = "Navigation"	>-->
 				  							<cells>
-				  								<Text text = "{name}"></Text>
-				  								<Text text = "{name}"></Text>
-				  								<Input value = "{name}" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
-				  								<Text text = "{name}"></Text>
+				  								<Text text = "{PRODUCT_ID}"></Text>
+				  								<!--showValueHelp="true" valueHelpRequest="onF4Help"></Text>-->
+				  								<Text text = "{NAME}"></Text>
+				  								<Text text = "{CATEGORY}"></Text>
+				  								<Text text = "{PRICE} {CURRENCY}"></Text>
 				  							</cells>
 				  						</ColumnListItem>
 				  					</items>

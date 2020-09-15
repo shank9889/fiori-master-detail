@@ -7,7 +7,7 @@ sap.ui.define([
 
 	return Controller.extend("wipro.hr.payroll.controller.View2", {
 		onInit: function() {
-
+     
 			this.oRouter = this.getOwnerComponent().getRouter();
 			this.oRouter.attachRoutePatternMatched(this.herculis, this);
 		},
@@ -19,6 +19,8 @@ sap.ui.define([
 				parameters : {
 					expand : "toSupplier"}
 				});
+			
+this.getView().getModel().setProperty("/ProductSet");
 this.getView().byId("suppData").bindElement("toSupplier");
 this.getView().byId("imageDisplay").setSrc("/sap/opu/odata/sap/ZSH_FIORI_APP_SRV"+ sPath +"/$value");
 		},
@@ -88,10 +90,10 @@ this.getView().byId("imageDisplay").setSrc("/sap/opu/odata/sap/ZSH_FIORI_APP_SRV
 				this.getView().addDependent(this.oFragFilter);
 
 				this.oFragFilter.bindAggregation("items", {
-					path: '/cities',
+					path: '/ProductSet',
 					template: new sap.m.DisplayListItem({
-						label: "{name}",
-						value: "{name}"
+						label: "{CATEGORY}",
+						value: "{CATEGORY}"
 					})
 				});
 			}
@@ -106,7 +108,7 @@ this.getView().byId("imageDisplay").setSrc("/sap/opu/odata/sap/ZSH_FIORI_APP_SRV
 				var oTable = this.getView().byId("suppTab");
 				var aFilter = [];
 				for (var i = 0; i < allItems.length; i++) {
-					aFilter.push(new sap.ui.model.Filter("name",
+					aFilter.push(new sap.ui.model.Filter("CATEGORY",
 						sap.ui.model.FilterOperator.EQ, allItems[i].getLabel()));
 				}
 

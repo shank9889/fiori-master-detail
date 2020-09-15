@@ -1,7 +1,8 @@
 <mvc:View controllerName="wipro.hr.payroll.controller.View2" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
     xmlns:f = "sap.ui.layout.form" xmlns:core="sap.ui.core">
 
-				<Page id="Page2" title="Details" showNavButton = "true" navButtonPress = "onBack">
+				<Page id="Page2" title="Details"> 
+				<!--showNavButton = "true" navButtonPress = "onBack">-->
 					
 				  
 					
@@ -39,25 +40,25 @@
 				  			<core:Fragment fragmentName = "wipro.hr.payroll.fragments.supplierTab" type = "XML"></core:Fragment>
 				  			</content>
 				  		</IconTabFilter>
-				  		<IconTabFilter key="CT" text = "Cities" icon="sap-icon://home">
-				  			<Select items = "{/cities}" id="idCity" change = "onDropDownChange">
-				  				<items>
-                                   <core:Item text = "{name}" key="{name}"> </core:Item>
-				  				</items>
-				  			</Select>
+				  		<!--<IconTabFilter key="CT" text = "Cities" icon="sap-icon://home">-->
+				  		<!--	<Select items = "{/cities}" id="idCity" change = "onDropDownChange">-->
+				  		<!--		<items>-->
+        <!--                           <core:Item text = "{name}" key="{name}"> </core:Item>-->
+				  		<!--		</items>-->
+				  		<!--	</Select>-->
 				  			
-				  		<ComboBox items = "{/cities}" id="idCity1" change = "onDropDownChange">
-				  				<items>
-                                   <core:Item text = "{name}" key="{name}"> </core:Item>
-				  				</items>
-				  			</ComboBox>
+				  		<!--<ComboBox items = "{/cities}" id="idCity1" change = "onDropDownChange">-->
+				  		<!--		<items>-->
+        <!--                           <core:Item text = "{name}" key="{name}"> </core:Item>-->
+				  		<!--		</items>-->
+				  		<!--	</ComboBox>-->
 				  			
-				  			<MultiComboBox items = "{/cities}" id="idCity2" selectionChange = "onMulti">
-				  				<items>
-                                   <core:Item text = "{name}" key="{name}"> </core:Item>
-				  				</items>
-				  			</MultiComboBox>
-				  		</IconTabFilter>
+				  		<!--	<MultiComboBox items = "{/cities}" id="idCity2" selectionChange = "onMulti">-->
+				  		<!--		<items>-->
+        <!--                           <core:Item text = "{name}" key="{name}"> </core:Item>-->
+				  		<!--		</items>-->
+				  		<!--	</MultiComboBox>-->
+				  		<!--</IconTabFilter>-->
 				  	</items>
 				  </IconTabBar>	
 			

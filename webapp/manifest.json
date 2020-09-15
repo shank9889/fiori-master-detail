@@ -9,7 +9,10 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"tags": {
-			"keywords": ["{{keyword1}}", "{{keyword2}}"]
+			"keywords": [
+				"{{keyword1}}",
+				"{{keyword2}}"
+			]
 		},
 		"ach": "HR-PR",
 		"dataSources": {
@@ -34,7 +37,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_bluecrystal", "sap_belize"]
+		"supportedThemes": [
+			"sap_bluecrystal",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"dependencies": {
@@ -53,10 +59,12 @@
 			"cozy": true
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/mystyle.css",
-				"id": ""
-			}]
+			"css": [
+				{
+					"uri": "css/mystyle.css",
+					"id": ""
+				}
+			]
 		},
 		"models": {
 			"local": {
@@ -74,9 +82,7 @@
 			},
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					
-				},
+				"settings": {},
 				"dataSource": "ZSH_FIORI_APP_SRV",
 				"preload": true
 			}
@@ -93,20 +99,31 @@
 				"viewPath": "wipro.hr.payroll.view",
 				"controlId": "myApp"
 			},
-			"routes": [{
-				"pattern": "",
-				"name": "master",
-				"target": ["donald", "trump"]
-			}, {
-				"pattern": "mario/{fruitId}",
-				"name": "detail",
-				"target": ["donald", "modi"]
-			},
-			{
-				"pattern": "addNew",
-				"name": "add",
-				"target": ["donald", "putin"]
-			}
+			"routes": [
+				{
+					"pattern": "",
+					"name": "master",
+					"target": [
+						"donald",
+						"trump"
+					]
+				},
+				{
+					"pattern": "mario/{fruitId}",
+					"name": "detail",
+					"target": [
+						"donald",
+						"modi"
+					]
+				},
+				{
+					"pattern": "addNew",
+					"name": "add",
+					"target": [
+						"donald",
+						"putin"
+					]
+				}
 			],
 			"targets": {
 				"donald": {
@@ -124,7 +141,6 @@
 					"viewId": "idView2",
 					"controlAggregation": "detailPages"
 				},
-				
 				"putin": {
 					"viewName": "Add",
 					"viewId": "idAdd",
@@ -132,5 +148,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zfiori_master/webapp",
+		"_version": "1.1.0"
 	}
 }
